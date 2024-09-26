@@ -10,8 +10,8 @@ const footerGroups = [
   {
     label: "Pages",
     links: [
-      { label: "Work", href: "/work" },
       { label: "About", href: "/about" },
+      { label: "Portfolio", href: "https://andrew-ichihara.vercel.app/" },
     ],
   },
   {

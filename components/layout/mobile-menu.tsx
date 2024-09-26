@@ -6,7 +6,7 @@ import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import ModeToggleMobile from "../ui/mode-toggle-mobile";
 
 const mobileNavLinks = [
-  { label: "Work", href: "/work" },
+  { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
 ];
 

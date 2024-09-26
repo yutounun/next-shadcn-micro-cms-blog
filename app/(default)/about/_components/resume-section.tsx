@@ -7,6 +7,13 @@ export default function ResumeSection({
 }: {
   resumeData: IResume[];
 }) {
+  function convertDate(date?: string) {
+    if (!date) return "";
+
+    const d = new Date(date); // Convert the string to a Date object
+    return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, "0")}`;
+  }
+
   return (
     <div className="max-w-5xl px-4 mx-auto sm:px-6 mb-8">
       <div>
@@ -45,7 +52,7 @@ export default function ResumeSection({
                     {item.title}
                   </h3>
                   <p className="text-sm ">
-                    {item.startDate} - {item.endDate}
+                    {convertDate(item.startDate)} - {convertDate(item.endDate)}
                   </p>
                   <div className="mt-2 text-sm ">
                     <div

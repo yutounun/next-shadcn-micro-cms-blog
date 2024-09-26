@@ -5,7 +5,7 @@ import fetchWork from "@/microcms/api/work";
 import { mainTitle, TechStack } from "@/microcms/const";
 
 export async function WorkContent() {
-  const resume = await fetchWork();
+  const resume = await fetchWork({ queries: { orders: "startDate" } });
 
   return (
     <div>

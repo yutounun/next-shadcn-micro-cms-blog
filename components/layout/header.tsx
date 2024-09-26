@@ -4,7 +4,7 @@ import MobileMenu from "./mobile-menu";
 import { ModeToggle } from "../ui/mode-toggle";
 
 const navLinks = [
-  { label: "Work", href: "/work" },
+  { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
 ];
 
