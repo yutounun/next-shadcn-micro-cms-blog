@@ -2,17 +2,15 @@ import Link from "next/link";
 import { siteConfig } from "@/config/site";
 import {
   IconBox,
-  IconBrandFacebook,
-  IconBrandInstagram,
   IconBrandLinkedin,
-  IconBrandX,
+  IconBrandGithub,
 } from "@tabler/icons-react";
 
 const footerGroups = [
   {
     label: "Pages",
     links: [
-      { label: "Work", href: "/work" },
+      // { label: "Work", href: "/work" },
       { label: "About", href: "/about" },
     ],
   },
@@ -22,35 +20,43 @@ const footerGroups = [
   },
   {
     label: "Contact",
-    links: [{ label: "GitHub", href: "https://github.com/kaganmert" }],
+    links: [
+      { label: "GitHub", href: "https://github.com/yutounun" },
+      { label: "LinkedIn", href: "https://www.linkedin.com/in/yuto-ichihara/" },
+    ],
   },
   {
     label: "Other",
-    links: [{ label: "GitHub", href: "https://github.com/kaganmert" }],
+    links: [{ label: "GitHub", href: "https://github.com/yutounun" }],
   },
 ];
 
 const socialLinks = [
-  {
-    label: "X",
-    href: "https://x.com",
-    icon: <IconBrandX />,
-  },
-  {
-    label: "Instagram",
-    href: "https://www.instagram.com",
-    icon: <IconBrandInstagram />,
-  },
+  // {
+  //   label: "X",
+  //   href: "https://x.com",
+  //   icon: <IconBrandX />,
+  // },
+  // {
+  //   label: "Instagram",
+  //   href: "https://www.instagram.com",
+  //   icon: <IconBrandInstagram />,
+  // },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com",
+    href: "https://www.linkedin.com/in/yuto-ichihara/",
     icon: <IconBrandLinkedin />,
   },
   {
-    label: "Facebook",
-    href: "https://www.facebook.com",
-    icon: <IconBrandFacebook />,
+    label: "GitHub",
+    href: "https://github.com/yutounun",
+    icon: <IconBrandGithub />,
   },
+  // {
+  //   label: "Facebook",
+  //   href: "https://www.facebook.com",
+  //   icon: <IconBrandFacebook />,
+  // },
 ];
 
 export function SiteFooter() {
@@ -111,25 +117,6 @@ export function SiteFooter() {
               </ul>
             </div>
           ))}
-        </div>
-
-        <div className="pb-4 md:pb-8">
-          <div className="text-xs">
-            Copyright © {new Date().getFullYear()}. All Rights Reserved.
-          </div>
-
-          <div className="text-xs">
-            The source code is available on{" "}
-            <a
-              href={siteConfig.links.github}
-              target="_blank"
-              rel="noreferrer"
-              className="font-medium underline underline-offset-4"
-            >
-              GitHub
-            </a>
-            .
-          </div>
         </div>
       </div>
     </footer>

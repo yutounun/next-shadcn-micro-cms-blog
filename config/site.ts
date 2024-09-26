@@ -14,16 +14,15 @@ export type SiteConfig = {
 };
 export const siteConfig: SiteConfig = {
   name: "next-shadcn-sanity-blog",
-  title: " Next Blog Template ✨",
-  description:
-    "Introducing a Next.js 14 blogging platform, elegantly designed with ShadcnUI for a seamless and modern user interface, and powered by Sanity.io as its robust headless CMS.",
+  title: " Andrew Blog",
+  description: "About tech and life in Vancouver",
   url: "",
   ogImage: "/og.jpg",
   links: {
     github: "https://github.com/kaganmert/next-shadcn-sanity-blog",
   },
   contacts: {
-    email: "contact@example.com",
-    phone: "08000 000 000",
+    email: "geek.yuto@gmail.com",
+    phone: "236-785-9611",
   },
 };

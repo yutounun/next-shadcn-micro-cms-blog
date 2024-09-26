@@ -1,6 +1,7 @@
 "use client";
 
 import { ptComponents } from "./pt-components";
+import DOMParserReact from "dom-parser-react";
 import { PortableText } from "@portabletext/react";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
@@ -55,10 +56,9 @@ async function PostDetail({ post }: any) {
         {/* Content */}
         <div className="prose mx-auto">
           <div
-            className="prose mx-auto"
+            className="prose mx-auto content"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
-          {/* <PortableText value={post.content} /> */}
         </div>
 
         <Separator className="my-8" />

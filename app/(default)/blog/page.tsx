@@ -15,8 +15,8 @@ export default async function Home() {
   return (
     <main className="min-h-screen antialiased">
       <HeroSection
-        title="Read My Blog"
-        description="Enhance your development skills through insightful articles."
+        title="Fuel Your Passion for Learning"
+        description="From tech to culture, discover the trends shaping tomorrow."
       />
       <PostList allPosts={allPosts} />
     </main>

@@ -7,7 +7,7 @@ import { Button } from "../ui/button";
 import ModeToggleMobile from "../ui/mode-toggle-mobile";
 
 const mobileNavLinks = [
-  { label: "Work", href: "/work" },
+  // { label: "Work", href: "/work" },
   { label: "Blog", href: "/blog" },
 ];
 

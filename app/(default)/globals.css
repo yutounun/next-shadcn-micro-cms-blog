@@ -81,3 +81,42 @@
       "calt" 1;
   }
 }
+
+.content {
+  @apply mt-4 mb-4 space-y-6;
+}
+
+.content h1,
+.content h2,
+.content h3 {
+  @apply font-bold text-3xl mt-8 mb-4;
+}
+
+.content p {
+  @apply text-base leading-relaxed;
+}
+
+.content ul,
+.content ol {
+  @apply list-disc list-inside pl-4;
+}
+
+.content li {
+  @apply mb-2;
+}
+
+.content pre {
+  @apply bg-gray-900 text-white p-4 rounded-lg;
+}
+
+.content code {
+  @apply text-white px-1 rounded-md;
+}
+
+.content pre {
+  @apply bg-gray-900 p-4 rounded-lg overflow-x-auto;
+}
+
+.content a {
+  @apply text-blue-600 underline hover:text-blue-800;
+}
