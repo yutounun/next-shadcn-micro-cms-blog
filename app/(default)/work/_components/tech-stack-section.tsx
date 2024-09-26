@@ -1,12 +1,10 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { TechStack } from "@/sanity/lib/sanity";
-import { Progress } from "@/components/ui/progress";
 import { Meteors } from "@/components/ui/meteors";
-import { urlForImage } from "@/sanity/lib/image";
+import { ITechStack } from "@/microcms/type";
 
 interface TechStackProps {
-  techStackData: TechStack[];
+  techStackData: ITechStack[];
 }
 
 export default function TechStackSection({ techStackData }: TechStackProps) {
@@ -25,7 +23,7 @@ export default function TechStackSection({ techStackData }: TechStackProps) {
               }}
               className="mt-8 py-4 text-center text-4xl font-medium tracking-tight md:text-7xl"
             >
-              Tech Stack ❤️
+              Tech Stack 👨‍💻
             </motion.h2>
             <motion.p
               initial={{ opacity: 0.5, y: 100 }}
@@ -37,8 +35,7 @@ export default function TechStackSection({ techStackData }: TechStackProps) {
               }}
               className="text-center pt-10 hidden sm:block text-lg"
             >
-              Embracing lifelong learning, evolving endlessly in the tech
-              landscape.{" "}
+              Never ends learning, evolving endlessly in the tech landscape.{" "}
             </motion.p>
           </div>
           <div className="relative grid max-w-xs grid-cols-2 gap-6 mx-auto mt-10 sm:max-w-md md:max-w-6xl sm:grid-cols-3 md:grid-cols-6 md:mt-20">
@@ -49,7 +46,7 @@ export default function TechStackSection({ techStackData }: TechStackProps) {
                   <div className="relative shadow-xl bg-gray-900 border border-gray-800  px-4 py-8 h-full overflow-hidden rounded-2xl flex flex-col justify-end items-start">
                     <div className="h-5 w-5 rounded-full border flex items-center justify-center mb-4 border-gray-500">
                       <Image
-                        src={urlForImage(item.image)}
+                        src={item.imgUrl}
                         width={75}
                         height={75}
                         alt={item.language}
@@ -58,7 +55,7 @@ export default function TechStackSection({ techStackData }: TechStackProps) {
                     <h1 className="font-bold text-xl text-white mb-4 relative z-50">
                       <p>{item.language}</p>
                     </h1>
-                    <Progress value={item.proficiency} />
+                    {/* <Progress value={item.proficiency} /> */}
                     <Meteors number={20} />
                   </div>
                 </div>

@@ -10,3 +10,19 @@ export type ArticleType = {
     url: string;
   };
 };
+
+export type ITechStack = {
+  language: string;
+  imgUrl: string;
+};
+
+export type IResume = {
+  title: string;
+  description: string;
+  imgUrl: {
+    url: string;
+  };
+  startDate: string;
+  endDate: string;
+  isCurrent: boolean;
+};

@@ -1,20 +1,17 @@
-import { getWork } from "@/sanity/lib/sanity";
 import HeroSection from "@/components/hero-section";
 import ResumeSection from "./resume-section";
 import TechStackSection from "./tech-stack-section";
+import fetchWork from "@/microcms/api/work";
+import { mainTitle, TechStack } from "@/microcms/const";
 
 export async function WorkContent() {
-  // const data = await getWork();
-  // if (!data) {
-  //   return <h2>No work data available.</h2>;
-  // }
+  const resume = await fetchWork();
 
   return (
     <div>
-      {/* <HeroSection title={data.mainTitle} description={data.mainTitle} />
-      <ResumeSection resumeData={data.resume} />
-      <TechStackSection techStackData={data.techStack} /> */}
-      <h1>work section</h1>
+      <HeroSection title={mainTitle} description={mainTitle} />
+      <ResumeSection resumeData={resume.contents} />
+      <TechStackSection techStackData={TechStack} />
     </div>
   );
 }
