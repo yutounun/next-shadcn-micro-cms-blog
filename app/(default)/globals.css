@@ -106,17 +106,18 @@
 }
 
 .content pre {
-  @apply bg-gray-900 text-white p-4 rounded-lg;
+  @apply bg-gray-900 text-white p-4 rounded-lg overflow-x-auto;
 }
 
 .content code {
   @apply text-white px-1 rounded-md;
 }
 
-.content pre {
-  @apply bg-gray-900 p-4 rounded-lg overflow-x-auto;
-}
-
 .content a {
   @apply text-blue-600 underline hover:text-blue-800;
+}
+
+/* Styling for blockquote */
+.content blockquote {
+  @apply italic border-l-4 border-gray-300 pl-4 text-gray-700 bg-gray-100 p-4 rounded-md;
 }
