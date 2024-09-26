@@ -166,9 +166,8 @@ export async function getPosts(): Promise<Post[]> {
 export async function getPostsByCategorySlug(
   categorySlug: string
 ): Promise<Post[]> {
-  try {
-    if (categorySlug === "all") {
-      const query = groq`*[_type == "post"] | order(_createdAt desc) {
+  if (categorySlug === "all") {
+    const query = groq`*[_type == "post"] | order(_createdAt desc) {
         _id,
         _createdAt,
         title,
@@ -184,10 +183,10 @@ export async function getPostsByCategorySlug(
         "tags": blogTags[]->{title, "color": color.hex} 
       }`;
 
-      const posts: Post[] = await createClient(clientConfig).fetch(query);
-      return posts;
-    } else {
-      const query = groq`*[_type == "post" && category->slug.current == $categorySlug] | order(_createdAt desc) {
+    const posts: Post[] = await createClient(clientConfig).fetch(query);
+    return posts;
+  } else {
+    const query = groq`*[_type == "post" && category->slug.current == $categorySlug] | order(_createdAt desc) {
         _id,
         _createdAt,
         title,
@@ -201,20 +200,15 @@ export async function getPostsByCategorySlug(
         "tags": blogTags[]->{title, "color": color.hex} 
       }`;
 
-      const posts: Post[] = await createClient(clientConfig).fetch(query, {
-        categorySlug,
-      });
-      return posts;
-    }
-  } catch (error) {
-    console.error("Hata:", error);
-    throw error;
+    const posts: Post[] = await createClient(clientConfig).fetch(query, {
+      categorySlug,
+    });
+    return posts;
   }
 }
 
 export async function getPost(slug: string): Promise<Post> {
-  try {
-    const query = groq`*[_type == "post" && slug.current == $slug] | order(_createdAt desc)[0] {
+  const query = groq`*[_type == "post" && slug.current == $slug] | order(_createdAt desc)[0] {
       _id,
       _createdAt,
       title,
@@ -231,39 +225,30 @@ export async function getPost(slug: string): Promise<Post> {
       "tags": blogTags[]->{title, "color": color.hex} 
     }`;
 
-    const post: Post = await createClient(clientConfig).fetch(query, { slug });
+  const post: Post = await createClient(clientConfig).fetch(query, { slug });
 
-    const headers: Header[] = [];
-    post.body.forEach((block: Block) => {
-      if (
-        block._type === "block" &&
-        block.style &&
-        block.style.match(/h[1-6]/)
-      ) {
-        block.children.forEach((child: Child) => {
-          if (child._type === "span" && child.text) {
-            headers.push({
-              text: child.text,
-              level: block.style,
-              id: child.text.replaceAll(" ", "-").toLowerCase(),
-            });
-          }
-        });
-      }
-    });
+  const headers: Header[] = [];
+  post.body.forEach((block: Block) => {
+    if (block._type === "block" && block.style && block.style.match(/h[1-6]/)) {
+      block.children.forEach((child: Child) => {
+        if (child._type === "span" && child.text) {
+          headers.push({
+            text: child.text,
+            level: block.style,
+            id: child.text.replaceAll(" ", "-").toLowerCase(),
+          });
+        }
+      });
+    }
+  });
 
-    return { ...post, headers };
-  } catch (error) {
-    console.error("Hata:", error);
-    throw error;
-  }
+  return { ...post, headers };
 }
 
 export async function getPostsByCategoryName(
   categoryName: string
 ): Promise<Post[]> {
-  try {
-    const query = groq`*[_type == "post" && category.title == $categoryName] | order(_createdAt desc) {
+  const query = groq`*[_type == "post" && category.title == $categoryName] | order(_createdAt desc) {
       _id,
       _createdAt,
       title,
@@ -277,14 +262,10 @@ export async function getPostsByCategoryName(
       "tags": blogTags[]->{title, "color": color.hex} 
     }`;
 
-    const posts: Post[] = await createClient(clientConfig).fetch(query, {
-      categoryName,
-    });
-    return posts;
-  } catch (error) {
-    console.error("Hata:", error);
-    throw error;
-  }
+  const posts: Post[] = await createClient(clientConfig).fetch(query, {
+    categoryName,
+  });
+  return posts;
 }
 
 export async function getLatestFavoriteOpenSourceProjects() {
