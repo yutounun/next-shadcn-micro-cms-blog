@@ -10,17 +10,16 @@ import Header from "@/components/layout/header";
 export const metadata: Metadata = {
   metadataBase: new URL("https://yourdomain.com"), // Change to your project's domain
   title: {
-    default: "Next-Shadcn-Sanity Blog",
-    template: "%s | Next-Shadcn-Sanity Blog",
+    default: "Andrew Blog",
+    template: "Andrew Blog",
   },
-  description:
-    "A modern blogging platform powered by Next.js 14, ShadcnUI, and Sanity.io.",
+  description: "About tech and life in Vancouver",
   openGraph: {
-    title: "Next-Shadcn-Sanity Blog",
+    title: "Andrew Blog",
     description:
       "Explore the future of blogging with our platform powered by Next.js 14, ShadcnUI, and Sanity.io.",
     url: "https://yourdomain.com", // Change to your project's URL
-    siteName: "Next-Shadcn-Sanity Blog",
+    siteName: "Andrew Blog",
     locale: "en_US",
     type: "website",
   },
@@ -36,7 +35,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Next-Shadcn-Sanity Blog",
+    title: "Andrew Blog",
     card: "summary_large_image",
   },
   verification: {
