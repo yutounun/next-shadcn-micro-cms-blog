@@ -8,6 +8,8 @@ export default function Home() {
       <HeroSection
         title={siteConfig.title}
         description={siteConfig.description}
+        buttonText="Explore the Blog"
+        buttonLink="/blog"
       />
       {/* <Newsletter /> */}
     </>
