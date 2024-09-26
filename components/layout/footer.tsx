@@ -10,7 +10,7 @@ const footerGroups = [
   {
     label: "Pages",
     links: [
-      // { label: "Work", href: "/work" },
+      { label: "Work", href: "/work" },
       { label: "About", href: "/about" },
     ],
   },

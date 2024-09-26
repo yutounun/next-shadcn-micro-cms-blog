@@ -3,11 +3,10 @@ import { useState, useRef, useEffect } from "react";
 import { Transition } from "@headlessui/react";
 import Link from "next/link";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
-import { Button } from "../ui/button";
 import ModeToggleMobile from "../ui/mode-toggle-mobile";
 
 const mobileNavLinks = [
-  // { label: "Work", href: "/work" },
+  { label: "Work", href: "/work" },
   { label: "Blog", href: "/blog" },
 ];
 
