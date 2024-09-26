@@ -2,18 +2,6 @@ import { ITechStack } from "./type";
 
 export const TechStack: ITechStack[] = [
   {
-    language: "HTML",
-    imgUrl: "/images/html.png",
-  },
-  {
-    language: "CSS",
-    imgUrl: "/images/css.png",
-  },
-  {
-    language: "JavaScript",
-    imgUrl: "/images/javascript.png",
-  },
-  {
     language: "TypeScript",
     imgUrl: "/images/typescript.png",
   },
@@ -24,6 +12,42 @@ export const TechStack: ITechStack[] = [
   {
     language: "Next.js",
     imgUrl: "/images/nextjs.png",
+  },
+  {
+    language: "Vue.js",
+    imgUrl: "/images/html.png",
+  },
+  {
+    language: "FastAPI",
+    imgUrl: "/images/javascript.png",
+  },
+  {
+    language: "Node.js",
+    imgUrl: "/images/typescript.png",
+  },
+  {
+    language: "Django",
+    imgUrl: "/images/javascript.png",
+  },
+  {
+    language: "shadcn/ui",
+    imgUrl: "/images/javascript.png",
+  },
+  {
+    language: "tailwindcss",
+    imgUrl: "/images/javascript.png",
+  },
+  {
+    language: "Figma",
+    imgUrl: "/images/react.png",
+  },
+  {
+    language: "HeadlessCMS",
+    imgUrl: "/images/nextjs.png",
+  },
+  {
+    language: "AWS",
+    imgUrl: "/images/javascript.png",
   },
 ];
 
