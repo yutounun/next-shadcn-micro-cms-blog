@@ -119,7 +119,7 @@ export async function getCategories(): Promise<Category[]> {
       "slug": slug.current,
       categoryImage,
       ordering
-    }`,
+    }`
   );
 }
 
@@ -160,11 +160,11 @@ export async function getPosts(): Promise<Post[]> {
       publishedAt,
       body,
       "tags": blogTags[]->{title, "color": color.hex} 
-    }`,
+    }`
   );
 }
 export async function getPostsByCategorySlug(
-  categorySlug: string,
+  categorySlug: string
 ): Promise<Post[]> {
   try {
     if (categorySlug === "all") {
@@ -260,7 +260,7 @@ export async function getPost(slug: string): Promise<Post> {
 }
 
 export async function getPostsByCategoryName(
-  categoryName: string,
+  categoryName: string
 ): Promise<Post[]> {
   try {
     const query = groq`*[_type == "post" && category.title == $categoryName] | order(_createdAt desc) {
@@ -343,7 +343,7 @@ export async function getVideoCategories(): Promise<VideoCategory[]> {
 }
 
 export async function getFavoriteYoutubeVideosByCategory(
-  categoryTitle: string,
+  categoryTitle: string
 ): Promise<FavoriteYouTubeVideo[]> {
   const query = groq`*[_type == "favoriteYouTubeVideo" && videoCategory->title == $categoryTitle] | order(_createdAt desc) {
     _id,
@@ -359,7 +359,7 @@ export async function getFavoriteYoutubeVideosByCategory(
 
 export async function getNextPostInSameCategory(
   postSlug: string,
-  categorySlug: string,
+  categorySlug: string
 ) {
   const currentPostQuery = groq`
     *[_type == "post" && slug.current == $postSlug]{
@@ -408,7 +408,7 @@ export async function getNextPostInSameCategory(
 
 export async function getPreviousPostInSameCategory(
   postSlug: string,
-  categorySlug: string,
+  categorySlug: string
 ) {
   const currentPostQuery = groq`
     *[_type == "post" && slug.current == $postSlug]{
@@ -452,7 +452,7 @@ export async function getPreviousPostInSameCategory(
       postSlug,
       categorySlug,
       currentPostCreatedAt: currentPost._createdAt,
-    },
+    }
   );
 
   return previousPost;

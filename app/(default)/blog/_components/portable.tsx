@@ -1,8 +1,5 @@
 "use client";
 
-import { ptComponents } from "./pt-components";
-import DOMParserReact from "dom-parser-react";
-import { PortableText } from "@portabletext/react";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
