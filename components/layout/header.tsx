@@ -25,7 +25,9 @@ export function NavLink({ label, href }: { label: string; href: string }) {
   if (label === "Blog") {
     return (
       <DropdownMenu>
-        <DropdownMenuTrigger className="text-sm">{label}</DropdownMenuTrigger>
+        <DropdownMenuTrigger className="mx-4 text-sm font-medium lg:mx-5">
+          {label}
+        </DropdownMenuTrigger>
         <DropdownMenuContent>
           {categories.map((category) => (
             <Link key={category.name} href={category.href}>
