@@ -3,51 +3,51 @@ import { ITechStack } from "./type";
 export const TechStack: ITechStack[] = [
   {
     language: "TypeScript",
-    imgUrl: "/images/typescript.png",
+    imgUrl: "/skills/typescript.png",
   },
   {
     language: "React",
-    imgUrl: "/images/react.png",
+    imgUrl: "/skills/react.png",
   },
   {
     language: "Next.js",
-    imgUrl: "/images/nextjs.png",
+    imgUrl: "/skills/next.png",
   },
   {
     language: "Vue.js",
-    imgUrl: "/images/html.png",
+    imgUrl: "/skills/vue.png",
   },
   {
     language: "FastAPI",
-    imgUrl: "/images/javascript.png",
+    imgUrl: "/skills/fastapi.png",
   },
   {
     language: "Node.js",
-    imgUrl: "/images/typescript.png",
+    imgUrl: "/skills/nodejs.png",
   },
   {
     language: "Django",
-    imgUrl: "/images/javascript.png",
+    imgUrl: "/skills/django.png",
   },
   {
-    language: "shadcn/ui",
-    imgUrl: "/images/javascript.png",
+    language: "Framer",
+    imgUrl: "/skills/framer.png",
   },
   {
     language: "tailwindcss",
-    imgUrl: "/images/javascript.png",
+    imgUrl: "/skills/tailwind.png",
   },
   {
     language: "Figma",
-    imgUrl: "/images/react.png",
+    imgUrl: "/skills/figma.png",
   },
   {
-    language: "HeadlessCMS",
-    imgUrl: "/images/nextjs.png",
+    language: "shadcn/ui",
+    imgUrl: "/skills/shadcn.png",
   },
   {
     language: "AWS",
-    imgUrl: "/images/javascript.png",
+    imgUrl: "/skills/aws.png",
   },
 ];
 
