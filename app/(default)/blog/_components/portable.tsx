@@ -5,6 +5,8 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { formatDate } from "@/lib/date-format";
 import { buttonVariants } from "@/components/ui/button";
+import Image from "next/image";
+import { Badge } from "@/components/ui/badge";
 
 async function PostDetail({ post }: any) {
   return (
@@ -27,7 +29,27 @@ async function PostDetail({ post }: any) {
             {post.title}
           </h1>
 
-          {/* TODO: Insert main Img */}
+          {/* Category */}
+          <Link
+            href={`/blog/category/${post.category.id}`}
+            className="mt-3 flex items-center"
+          >
+            <Badge variant="secondary" className="">
+              {post.category.name}
+            </Badge>
+          </Link>
+
+          {/* Main Img */}
+          <div className="w-full h-56 sm:h-72 md:h-96 lg:h-[500px] mt-8 relative">
+            <Image
+              src={post.eyecatch.url}
+              alt={post.title}
+              fill
+              style={{
+                objectFit: "cover",
+              }}
+            />
+          </div>
 
           {/* Date */}
           <div className="mt-6 flex items-center space-x-4">
@@ -42,7 +64,7 @@ async function PostDetail({ post }: any) {
               {/* <p className="text-lg font-medium">{post.author}</p> */}
               <time
                 dateTime={post.publishedAt}
-                className="mt-2 block text-sm text-muted-foreground"
+                className="mt-2 block text-xs text-muted-foreground"
               >
                 {formatDate(post.publishedAt)}
               </time>

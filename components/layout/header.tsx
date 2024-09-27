@@ -2,11 +2,46 @@ import Link from "next/link";
 import { IconBox } from "@tabler/icons-react";
 import MobileMenu from "./mobile-menu";
 import { ModeToggle } from "../ui/mode-toggle";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+const categories = [
+  { name: "Featured", href: "/blog" },
+  { name: "Life", href: "/blog/category/24powvgak" },
+  { name: "Leetcode", href: "/blog/category/r8vt20z772b" },
+  { name: "Tech", href: "/blog/category/6xvpywpboij" },
+];
 
 const navLinks = [
   { label: "About", href: "/about" },
   { label: "Blog", href: "/blog" },
 ];
+
+export function NavLink({ label, href }: { label: string; href: string }) {
+  if (label === "Blog") {
+    return (
+      <DropdownMenu>
+        <DropdownMenuTrigger className="text-sm">{label}</DropdownMenuTrigger>
+        <DropdownMenuContent>
+          {categories.map((category) => (
+            <Link key={category.name} href={category.href}>
+              <DropdownMenuItem>{category.name}</DropdownMenuItem>
+            </Link>
+          ))}
+        </DropdownMenuContent>
+      </DropdownMenu>
+    );
+  }
+  return (
+    <Link href={label} className="mx-4 text-sm font-medium lg:mx-5">
+      {label}
+    </Link>
+  );
+}
 
 export default function Header() {
   return (
@@ -22,12 +57,7 @@ export default function Header() {
             <ul className="flex flex-wrap items-center justify-center grow">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
-                    className="mx-4 text-sm font-medium lg:mx-5"
-                    href={link.href}
-                  >
-                    {link.label}
-                  </Link>
+                  <NavLink label={link.label} href={link.href} />
                 </li>
               ))}
             </ul>
