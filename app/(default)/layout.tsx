@@ -7,6 +7,7 @@ import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import { SiteFooter } from "@/components/layout/footer";
 import Header from "@/components/layout/header";
+import GoogleAdsense from "./blog/_components/GoogleAdsense";
 export const metadata: Metadata = {
   metadataBase: new URL("https://yourdomain.com"), // Change to your project's domain
   title: {
@@ -56,6 +57,9 @@ export default function RootLayout({
       lang="en"
       className={cx("text-black  dark", GeistSans.variable, GeistMono.variable)}
     >
+      <head>
+        <GoogleAdsense pId="1580241070744469" />
+      </head>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Analytics />
