@@ -121,3 +121,20 @@
 .content blockquote {
   @apply italic border-l-4 border-gray-300 pl-4 text-gray-700 bg-gray-100 p-4 rounded-md;
 }
+
+/* Styling for tables */
+.content table {
+  @apply w-full table-auto border-collapse;
+}
+
+.content th {
+  @apply border-b-2 border-gray-300 px-4 py-2 text-left font-bold;
+}
+
+.content td {
+  @apply border-b border-gray-300 px-4 py-2;
+}
+
+.content tr:nth-child(even) {
+  @apply bg-gray-100;
+}
