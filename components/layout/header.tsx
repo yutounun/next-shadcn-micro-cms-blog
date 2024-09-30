@@ -39,7 +39,7 @@ export function NavLink({ label, href }: { label: string; href: string }) {
     );
   }
   return (
-    <Link href={label} className="mx-4 text-sm font-medium lg:mx-5">
+    <Link href={href} className="mx-4 text-sm font-medium lg:mx-5">
       {label}
     </Link>
   );
