@@ -96,6 +96,14 @@
   @apply text-base leading-relaxed;
 }
 
+.content pre code {
+  @apply bg-[#111827];
+}
+
+.content code {
+  @apply text-white font-bold bg-[#EA686B];
+}
+
 .content ul,
 .content ol {
   @apply list-disc list-inside pl-4;
